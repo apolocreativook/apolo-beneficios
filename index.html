@@ -1,0 +1,1862 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Beneficios · Apolo Creativo</title>
+
+  <meta
+    name="description"
+    content="Sorteos y beneficios de Apolo Creativo."
+  />
+
+  <style>
+    :root {
+      --bg: #f4f2ee;
+      --paper: #faf9f6;
+      --ink: #111111;
+      --muted: #6f6c66;
+      --line: #1a1a1a;
+      --soft: #dedbd4;
+      --accent: #d9ff3f;
+      --max: 1240px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.35;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    .wrap {
+      width: min(calc(100% - 48px), var(--max));
+      margin: auto;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(244, 242, 238, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #bbb8b1;
+    }
+
+    .nav {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      font-size: 20px;
+    }
+
+    .brand span {
+      font-weight: 400;
+    }
+
+    .navlinks {
+      display: flex;
+      gap: 30px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .menu {
+      display: none;
+      border: 0;
+      background: none;
+      font-size: 25px;
+    }
+
+    /* =========================
+       GENERAL
+    ========================= */
+
+    .eyebrow {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      margin-bottom: 22px;
+      font-weight: 700;
+    }
+
+    section {
+      padding: 110px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(44px, 6vw, 82px);
+      line-height: 0.9;
+      letter-spacing: -0.06em;
+    }
+
+    .section-head p {
+      max-width: 600px;
+      font-size: 18px;
+      color: #4c4943;
+      margin: 8px 0 0;
+    }
+
+    /* =========================
+       BUTTONS
+    ========================= */
+
+    .btn {
+      border: 1px solid var(--line);
+      background: var(--ink);
+      color: white;
+      padding: 15px 22px;
+      font-weight: 700;
+      cursor: pointer;
+      transition:
+        0.2s transform,
+        0.2s background,
+        0.2s color;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: var(--ink);
+    }
+
+    .btn.lime {
+      background: var(--accent);
+      color: var(--ink);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 78vh;
+      display: grid;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      padding: 90px 0 110px;
+    }
+
+    h1 {
+      font-size: clamp(58px, 9vw, 132px);
+      line-height: 0.84;
+      letter-spacing: -0.075em;
+      max-width: 1000px;
+      margin: 0 0 38px;
+      font-weight: 900;
+    }
+
+    .hero p {
+      max-width: 620px;
+      font-size: 20px;
+      line-height: 1.45;
+      margin: 0 0 34px;
+      color: #37352f;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* =========================
+       BENEFICIOS
+    ========================= */
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .benefit {
+      min-height: 300px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      transition: 0.25s;
+    }
+
+    .benefit:hover {
+      background: var(--accent);
+      transform: translateY(-4px);
+    }
+
+    .benefit-number {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+    }
+
+    .benefit h3 {
+      font-size: clamp(34px, 4vw, 56px);
+      line-height: 0.88;
+      letter-spacing: -0.06em;
+      margin: 0;
+      max-width: 330px;
+    }
+
+    .benefit p {
+      font-size: 15px;
+      max-width: 280px;
+      margin: 0;
+      color: #494741;
+    }
+
+    .benefit:hover p {
+      color: var(--ink);
+    }
+
+    /* =========================
+       SORTEO
+    ========================= */
+
+    .giveaway {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      border: 1px solid var(--line);
+      background: var(--ink);
+      color: white;
+    }
+
+    .giveaway-main {
+      padding: 55px;
+    }
+
+    .giveaway-main .eyebrow {
+      color: #bdbbb5;
+    }
+
+    .giveaway h3 {
+      font-size: clamp(45px, 6vw, 78px);
+      line-height: 0.88;
+      letter-spacing: -0.065em;
+      margin: 0 0 25px;
+    }
+
+    .giveaway p {
+      font-size: 18px;
+      color: #d1d0ca;
+      max-width: 580px;
+    }
+
+    .giveaway-side {
+      padding: 55px;
+      border-left: 1px solid #4b4b4b;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .prize {
+      border: 1px solid #666;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .prize strong {
+      display: block;
+      font-size: 28px;
+      letter-spacing: -0.04em;
+      margin-top: 8px;
+    }
+
+    .giveaway .btn {
+      border-color: white;
+    }
+
+    /* =========================
+       COMO FUNCIONA
+    ========================= */
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+    }
+
+    .step {
+      padding: 30px;
+      border-right: 1px solid var(--line);
+    }
+
+    .step:last-child {
+      border-right: 0;
+    }
+
+    .step b {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+    }
+
+    .step h3 {
+      font-size: 28px;
+      letter-spacing: -0.04em;
+      margin: 60px 0 10px;
+    }
+
+    .step p {
+      color: var(--muted);
+      max-width: 300px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 40px 0;
+    }
+
+    .footerline {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* =========================
+       MODAL
+    ========================= */
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      background: rgba(0, 0, 0, 0.68);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal.open {
+      display: flex;
+    }
+
+    .modal-card {
+      width: min(780px, 100%);
+      max-height: 92vh;
+      overflow: auto;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      padding: 34px;
+    }
+
+    .modal-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: start;
+      margin-bottom: 30px;
+    }
+
+    .modal h2 {
+      font-size: 46px;
+      line-height: 0.9;
+      letter-spacing: -0.06em;
+      margin: 0;
+    }
+
+    .close {
+      border: 1px solid var(--line);
+      background: transparent;
+      width: 42px;
+      height: 42px;
+      cursor: pointer;
+      font-size: 24px;
+    }
+
+    /* =========================
+       TIPO DE PARTICIPACIÓN
+    ========================= */
+
+    .choice {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+
+    .choice label {
+      cursor: pointer;
+    }
+
+    .choice input {
+      position: absolute;
+      opacity: 0;
+    }
+
+    .choice span {
+      display: block;
+      border: 1px solid #aaa;
+      padding: 15px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .choice input:checked + span {
+      background: var(--ink);
+      color: white;
+      border-color: var(--ink);
+    }
+
+    /* =========================
+       FORMULARIO
+    ========================= */
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .field label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      border: 1px solid #999;
+      background: white;
+      padding: 14px;
+      outline: none;
+      color: #111;
+    }
+
+    .field textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--ink);
+    }
+
+    .options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .options label {
+      border: 1px solid #aaa;
+      padding: 10px 12px;
+      font-size: 14px;
+      cursor: pointer;
+      background: white;
+      color: #111;
+    }
+
+    .consent {
+      font-size: 12px;
+      color: var(--muted);
+      margin: 22px 0;
+    }
+
+    .success {
+      display: none;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .success.show {
+      display: block;
+    }
+
+    .success h2 {
+      font-size: 55px;
+      line-height: 0.9;
+      letter-spacing: -0.06em;
+    }
+
+    .form-content.hidden {
+      display: none;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 800px) {
+      .wrap {
+        width: min(calc(100% - 28px), var(--max));
+      }
+
+      .navlinks {
+        display: none;
+      }
+
+      .menu {
+        display: block;
+      }
+
+      .hero {
+        padding: 70px 0 90px;
+        min-height: auto;
+      }
+
+      h1 {
+        font-size: clamp(55px, 16vw, 100px);
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      section {
+        padding: 75px 0;
+      }
+
+      .section-head {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-bottom: 35px;
+      }
+
+      .benefits {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .benefit {
+        min-height: 260px;
+      }
+
+      .giveaway {
+        grid-template-columns: 1fr;
+      }
+
+      .giveaway-side {
+        border-left: 0;
+        border-top: 1px solid #4b4b4b;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .step {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .step:last-child {
+        border-bottom: 0;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .benefits {
+        grid-template-columns: 1fr;
+      }
+
+      .choice {
+        grid-template-columns: 1fr;
+      }
+
+      .modal-card {
+        padding: 22px;
+      }
+
+      .modal h2 {
+        font-size: 40px;
+      }
+
+      .giveaway-main,
+      .giveaway-side {
+        padding: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================= -->
+
+  <header>
+    <div class="wrap nav">
+
+      <a class="brand" href="#">
+        APOLO <span>Creativo</span>
+      </a>
+
+      <nav class="navlinks">
+        <a href="#beneficios">Beneficios</a>
+        <a href="#sorteo">Sorteo</a>
+        <a href="#como">Cómo funciona</a>
+      </nav>
+
+      <button class="menu" aria-label="Menú">
+        ☰
+      </button>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero">
+
+      <div class="wrap">
+
+        <div class="eyebrow">
+          Apolo Creativo · Teatro · Córdoba
+        </div>
+
+        <h1>
+          Venir al teatro<br>
+          tiene beneficios.
+        </h1>
+
+        <p>
+          Somos Apolo Creativo. Queremos que estar cerca nuestro
+          también tenga premio: sorteos, descuentos, entradas y
+          beneficios exclusivos para nuestra comunidad.
+        </p>
+
+        <div class="actions">
+
+          <a
+            class="btn lime"
+            href="#beneficios"
+          >
+            Ver beneficios ↓
+          </a>
+
+          <button
+            class="btn secondary"
+            onclick="openModal('ambos')"
+          >
+            Participar →
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         BENEFICIOS
+    ========================= -->
+
+    <section id="beneficios">
+
+      <div class="wrap">
+
+        <div class="section-head">
+
+          <div>
+
+            <div class="eyebrow">
+              01 · Beneficios
+            </div>
+
+            <h2>
+              Algo bueno<br>
+              te espera.
+            </h2>
+
+          </div>
+
+          <p>
+            Completá tus datos una sola vez y quedás registrado/a
+            para nuestras acciones y beneficios. Nosotros nos
+            comunicaremos con vos si tenemos algo para ofrecerte.
+          </p>
+
+        </div>
+
+
+        <div class="benefits">
+
+          <article class="benefit">
+
+            <div class="benefit-number">
+              BENEFICIO 01
+            </div>
+
+            <div>
+
+              <h3>
+                Entradas<br>
+                2×1
+              </h3>
+
+              <p>
+                Vení acompañado. Pagan una sola entrada.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="benefit">
+
+            <div class="benefit-number">
+              BENEFICIO 02
+            </div>
+
+            <div>
+
+              <h3>
+                50%<br>
+                descuento
+              </h3>
+
+              <p>
+                Mitad de precio para volver a disfrutar del teatro.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="benefit">
+
+            <div class="benefit-number">
+              BENEFICIO 03
+            </div>
+
+            <div>
+
+              <h3>
+                25%<br>
+                descuento
+              </h3>
+
+              <p>
+                Un beneficio especial para tu próxima función.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="benefit">
+
+            <div class="benefit-number">
+              BENEFICIO 04
+            </div>
+
+            <div>
+
+              <h3>
+                Vení<br>
+                de nuevo
+              </h3>
+
+              <p>
+                Porque una obra puede ser el comienzo de muchas más.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="benefit">
+
+            <div class="benefit-number">
+              BENEFICIO 05
+            </div>
+
+            <div>
+
+              <h3>
+                1<br>
+                FREE
+              </h3>
+
+              <p>
+                Una entrada gratis. Esta vez invitamos nosotros.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="benefit">
+
+            <div class="benefit-number">
+              BENEFICIO 06
+            </div>
+
+            <div>
+
+              <h3>
+                2<br>
+                FREE
+              </h3>
+
+              <p>
+                Dos entradas gratis para compartir la experiencia.
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+
+        <div style="margin-top:28px">
+
+          <button
+            class="btn"
+            onclick="openModal('beneficio')"
+          >
+            Quiero acceder a un beneficio →
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         SORTEO
+    ========================= -->
+
+    <section id="sorteo">
+
+      <div class="wrap">
+
+        <div class="section-head">
+
+          <div>
+
+            <div class="eyebrow">
+              02 · Sorteos
+            </div>
+
+            <h2>
+              También<br>
+              podés ganar.
+            </h2>
+
+          </div>
+
+          <p>
+            Participá de nuestros sorteos por entradas,
+            experiencias y beneficios especiales de Apolo Creativo.
+          </p>
+
+        </div>
+
+
+        <div class="giveaway">
+
+          <div class="giveaway-main">
+
+            <div class="eyebrow">
+              Sorteo activo · Edición de prueba
+            </div>
+
+            <h3>
+              ¿Querés ganar<br>
+              entradas?
+            </h3>
+
+            <p>
+              Completá el formulario y quedás registrado/a
+              para participar de nuestros próximos sorteos.
+            </p>
+
+            <button
+              class="btn lime"
+              onclick="openModal('sorteo')"
+            >
+              Participar del sorteo →
+            </button>
+
+          </div>
+
+
+          <div class="giveaway-side">
+
+            <div>
+
+              <div class="eyebrow">
+                Premio
+              </div>
+
+              <div class="prize">
+
+                <small>
+                  01
+                </small>
+
+                <strong>
+                  2 entradas
+                </strong>
+
+              </div>
+
+
+              <div class="prize">
+
+                <small>
+                  02
+                </small>
+
+                <strong>
+                  Experiencia Apolo
+                </strong>
+
+              </div>
+
+            </div>
+
+            <small style="color:#aaa">
+              Bases y condiciones · Próximamente
+            </small>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         COMO FUNCIONA
+    ========================= -->
+
+    <section id="como">
+
+      <div class="wrap">
+
+        <div class="section-head">
+
+          <div>
+
+            <div class="eyebrow">
+              03 · Cómo funciona
+            </div>
+
+            <h2>
+              Una sola vez.<br>
+              Y listo.
+            </h2>
+
+          </div>
+
+          <p>
+            La idea es que el formulario sea simple y nos permita
+            conocerte un poco mejor.
+          </p>
+
+        </div>
+
+
+        <div class="steps">
+
+          <div class="step">
+
+            <b>
+              01
+            </b>
+
+            <h3>
+              Completá tus datos.
+            </h3>
+
+            <p>
+              Nombre, DNI, WhatsApp, email e Instagram.
+            </p>
+
+          </div>
+
+
+          <div class="step">
+
+            <b>
+              02
+            </b>
+
+            <h3>
+              Contanos sobre vos.
+            </h3>
+
+            <p>
+              Qué obras viste, cuánto hace que no vas al teatro
+              y qué géneros te gustan.
+            </p>
+
+          </div>
+
+
+          <div class="step">
+
+            <b>
+              03
+            </b>
+
+            <h3>
+              Participá.
+            </h3>
+
+            <p>
+              Podés participar de sorteos, acceder a beneficios
+              o hacer ambas cosas.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <div class="wrap footerline">
+
+      <span>
+        © 2026 Apolo Creativo
+      </span>
+
+      <span>
+        Teatro independiente · Córdoba, Argentina
+      </span>
+
+      <a href="#">
+        ↑ Arriba
+      </a>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       MODAL + FORMULARIO NETLIFY
+  ========================= -->
+
+  <div
+    class="modal"
+    id="modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalTitle"
+  >
+
+    <div class="modal-card">
+
+
+      <!-- FORMULARIO -->
+
+      <div
+        class="form-content"
+        id="formContent"
+      >
+
+        <div class="modal-top">
+
+          <div>
+
+            <div class="eyebrow">
+              Apolo Creativo · Participación
+            </div>
+
+            <h2 id="modalTitle">
+              Completá tus datos.
+            </h2>
+
+          </div>
+
+          <button
+            class="close"
+            onclick="closeModal()"
+            aria-label="Cerrar"
+            type="button"
+          >
+            ×
+          </button>
+
+        </div>
+
+
+        <!-- TIPO DE PARTICIPACIÓN -->
+
+        <div class="choice">
+
+          <label>
+
+            <input
+              type="radio"
+              name="purpose_visual"
+              value="sorteo"
+            >
+
+            <span>
+              Sorteo
+            </span>
+
+          </label>
+
+
+          <label>
+
+            <input
+              type="radio"
+              name="purpose_visual"
+              value="beneficio"
+            >
+
+            <span>
+              Beneficio
+            </span>
+
+          </label>
+
+
+          <label>
+
+            <input
+              type="radio"
+              name="purpose_visual"
+              value="ambos"
+              checked
+            >
+
+            <span>
+              Ambas
+            </span>
+
+          </label>
+
+        </div>
+
+
+        <!--
+          ESTE ES EL FORMULARIO QUE NETLIFY DETECTARÁ.
+          data-netlify="true" es lo importante.
+        -->
+
+        <form
+          name="apolo-beneficios"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          id="mainForm"
+        >
+
+          <!-- Campo oculto requerido por Netlify -->
+
+          <input
+            type="hidden"
+            name="form-name"
+            value="apolo-beneficios"
+          >
+
+
+          <!-- Campo anti-spam -->
+
+          <p style="display:none">
+
+            <label>
+              No completar:
+              <input name="bot-field">
+            </label>
+
+          </p>
+
+
+          <!-- Guardamos la elección real -->
+
+          <input
+            type="hidden"
+            name="participacion"
+            id="participacion"
+            value="ambos"
+          >
+
+
+          <div class="form-grid">
+
+
+            <!-- NOMBRE -->
+
+            <div class="field">
+
+              <label for="nombre">
+                Nombre y apellido *
+              </label>
+
+              <input
+                id="nombre"
+                type="text"
+                name="nombre"
+                required
+                placeholder="Ej.: María Pérez"
+              >
+
+            </div>
+
+
+            <!-- DNI -->
+
+            <div class="field">
+
+              <label for="dni">
+                Últimos 3 del DNI *
+              </label>
+
+              <input
+                id="dni"
+                type="text"
+                name="dni"
+                maxlength="3"
+                inputmode="numeric"
+                pattern="[0-9]{3}"
+                required
+                placeholder="Ej.: 482"
+              >
+
+            </div>
+
+
+            <!-- WHATSAPP -->
+
+            <div class="field">
+
+              <label for="whatsapp">
+                Número de WhatsApp *
+              </label>
+
+              <input
+                id="whatsapp"
+                type="tel"
+                name="whatsapp"
+                required
+                placeholder="Ej.: 351 123 4567"
+              >
+
+            </div>
+
+
+            <!-- EMAIL -->
+
+            <div class="field">
+
+              <label for="email">
+                Email *
+              </label>
+
+              <input
+                id="email"
+                type="email"
+                name="email"
+                required
+                placeholder="Ej.: hola@email.com"
+              >
+
+            </div>
+
+
+            <!-- INSTAGRAM -->
+
+            <div class="field full">
+
+              <label for="instagram">
+                ¿Cómo es tu Instagram?
+              </label>
+
+              <input
+                id="instagram"
+                type="text"
+                name="instagram"
+                placeholder="@usuario"
+              >
+
+            </div>
+
+
+            <!-- SIGUE INSTAGRAM -->
+
+            <div class="field full">
+
+              <label>
+                ¿Nos seguís en Instagram? *
+              </label>
+
+              <div class="options">
+
+                <label>
+                  <input
+                    required
+                    type="radio"
+                    name="ig_follow"
+                    value="si"
+                  >
+                  Sí, ya los sigo
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="ig_follow"
+                    value="no_uso"
+                  >
+                  No uso Instagram
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="ig_follow"
+                    value="ahora_no"
+                  >
+                  Ahora mismo no
+                </label>
+
+              </div>
+
+            </div>
+
+
+            <!-- OBRAS -->
+
+            <div class="field full">
+
+              <label>
+                ¿Viste alguna de nuestras obras? *
+              </label>
+
+              <div class="options">
+
+                <label>
+                  <input
+                    required
+                    type="radio"
+                    name="obra"
+                    value="La última silla"
+                  >
+                  La última silla
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="obra"
+                    value="El peor casting del mundo"
+                  >
+                  El peor casting del mundo
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="obra"
+                    value="El peor evento del año"
+                  >
+                  El peor evento del año
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="obra"
+                    value="Q.E.P.D."
+                  >
+                  Q.E.P.D.
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="obra"
+                    value="Después de vos"
+                  >
+                  Después de vos
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="obra"
+                    value="Error 97"
+                  >
+                  Error 97
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="obra"
+                    value="Un domingo insoportable"
+                  >
+                  Un domingo insoportable
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="obra"
+                    value="Ninguna aún"
+                  >
+                  Ninguna aún
+                </label>
+
+              </div>
+
+            </div>
+
+
+            <!-- FRECUENCIA TEATRO -->
+
+            <div class="field full">
+
+              <label>
+                ¿Hace cuánto no vas al teatro? *
+              </label>
+
+              <div class="options">
+
+                <label>
+                  <input
+                    required
+                    type="radio"
+                    name="teatro"
+                    value="Hace menos de un mes"
+                  >
+                  Hace menos de un mes
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="teatro"
+                    value="Hace más de un mes"
+                  >
+                  Hace más de un mes
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="teatro"
+                    value="El año pasado"
+                  >
+                  El año pasado
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="teatro"
+                    value="Nunca fui al teatro"
+                  >
+                  Nunca fui al teatro
+                </label>
+
+              </div>
+
+            </div>
+
+
+            <!-- GENERO -->
+
+            <div class="field full">
+
+              <label>
+                ¿Qué género te gusta más? *
+              </label>
+
+              <div class="options">
+
+                <label>
+                  <input
+                    required
+                    type="radio"
+                    name="genero"
+                    value="Comedia"
+                  >
+                  Comedia
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="genero"
+                    value="Drama"
+                  >
+                  Drama
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="genero"
+                    value="Musical"
+                  >
+                  Musical
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="genero"
+                    value="Improvisación"
+                  >
+                  Improvisación
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="genero"
+                    value="Todas por igual"
+                  >
+                  Todas por igual
+                </label>
+
+              </div>
+
+            </div>
+
+
+            <!-- POR QUE -->
+
+            <div class="field full">
+
+              <label for="por_que">
+                ¿Por qué te gustaría ganar? *
+              </label>
+
+              <textarea
+                id="por_que"
+                name="por_que"
+                required
+                placeholder="Contanos brevemente..."
+              ></textarea>
+
+            </div>
+
+
+            <!-- CON QUIEN -->
+
+            <div class="field full">
+
+              <label for="con_quien">
+                ¿Con quién te gustaría ir?
+              </label>
+
+              <input
+                id="con_quien"
+                type="text"
+                name="con_quien"
+                placeholder="Ej.: Con mi pareja, amigos, familia..."
+              >
+
+            </div>
+
+
+          </div>
+
+
+          <!-- CONSENTIMIENTO -->
+
+          <div class="consent">
+
+            Al enviar este formulario aceptás participar de las
+            acciones de Apolo Creativo y que podamos contactarte
+            por WhatsApp o email en relación con sorteos,
+            beneficios, obras y actividades.
+
+          </div>
+
+
+          <button
+            class="btn lime"
+            type="submit"
+          >
+            Enviar →
+          </button>
+
+        </form>
+
+      </div>
+
+
+      <!-- MENSAJE DE ÉXITO -->
+
+      <div
+        class="success"
+        id="success"
+      >
+
+        <div class="eyebrow">
+          Apolo Creativo
+        </div>
+
+        <h2>
+          ¡Listo!
+        </h2>
+
+        <p>
+          Recibimos tu participación correctamente.
+          ¡Gracias por ser parte de Apolo!
+        </p>
+
+        <button
+          class="btn"
+          onclick="closeModal()"
+          type="button"
+        >
+          Volver a la página
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
+  <script>
+
+    const modal =
+      document.getElementById("modal");
+
+    const form =
+      document.getElementById("mainForm");
+
+    const formContent =
+      document.getElementById("formContent");
+
+    const success =
+      document.getElementById("success");
+
+    const participacion =
+      document.getElementById("participacion");
+
+
+    /*
+      ABRIR FORMULARIO
+    */
+
+    function openModal(type = "ambos") {
+
+      modal.classList.add("open");
+
+      document.body.style.overflow = "hidden";
+
+      const radio =
+        document.querySelector(
+          `input[name="purpose_visual"][value="${type}"]`
+        );
+
+      if (radio) {
+        radio.checked = true;
+      }
+
+      participacion.value = type;
+
+    }
+
+
+    /*
+      CAMBIO ENTRE:
+      SORTEO / BENEFICIO / AMBAS
+    */
+
+    document
+      .querySelectorAll(
+        'input[name="purpose_visual"]'
+      )
+      .forEach(function (radio) {
+
+        radio.addEventListener(
+          "change",
+          function () {
+
+            participacion.value =
+              this.value;
+
+          }
+        );
+
+      });
+
+
+    /*
+      CERRAR FORMULARIO
+    */
+
+    function closeModal() {
+
+      modal.classList.remove("open");
+
+      document.body.style.overflow = "";
+
+      setTimeout(function () {
+
+        formContent.classList.remove("hidden");
+
+        success.classList.remove("show");
+
+      }, 200);
+
+    }
+
+
+    /*
+      CERRAR HACIENDO CLICK AFUERA
+    */
+
+    modal.addEventListener(
+      "click",
+      function (event) {
+
+        if (event.target === modal) {
+
+          closeModal();
+
+        }
+
+      }
+    );
+
+
+    /*
+      ESC PARA CERRAR
+    */
+
+    document.addEventListener(
+      "keydown",
+      function (event) {
+
+        if (event.key === "Escape") {
+
+          closeModal();
+
+        }
+
+      }
+    );
+
+
+    /*
+      ENVÍO
+
+      IMPORTANTE:
+      Ya NO hacemos e.preventDefault().
+      Dejamos que el formulario sea enviado
+      normalmente a Netlify.
+    */
+
+  </script>
+
+</body>
+</html>
