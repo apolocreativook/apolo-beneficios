@@ -1699,12 +1699,20 @@
         </div>
 
         <h2>
-          ¡Listo!
+          ¡Gracias por participar!
         </h2>
 
         <p>
-          Recibimos tu participación correctamente.
-          ¡Gracias por ser parte de Apolo!
+          Gracias por acompañar y defender el teatro independiente.
+          En Apolo siempre queremos verte del otro lado del escenario.
+        </p>
+
+        <p>
+          <strong>Tu mensaje fue enviado con éxito.</strong>
+        </p>
+
+        <p>
+          Nos encantaría volver a verte en el teatro.
         </p>
 
         <button
@@ -1850,13 +1858,54 @@
 
 
     /*
-      ENVÍO
+      ENVÍO A NETLIFY
 
-      IMPORTANTE:
-      Ya NO hacemos e.preventDefault().
-      Dejamos que el formulario sea enviado
-      normalmente a Netlify.
+      Enviamos el formulario mediante fetch para que la persona
+      permanezca en esta página y podamos mostrar el mensaje
+      de agradecimiento dentro del mismo modal.
     */
+
+    form.addEventListener("submit", async function (event) {
+
+      event.preventDefault();
+
+      const submitButton =
+        form.querySelector('button[type="submit"]');
+
+      submitButton.disabled = true;
+      submitButton.textContent = "Enviando...";
+
+      try {
+
+        const formData = new FormData(form);
+
+        const response = await fetch("/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
+          body: new URLSearchParams(formData).toString()
+        });
+
+        if (!response.ok) {
+          throw new Error("No se pudo enviar el formulario.");
+        }
+
+        formContent.classList.add("hidden");
+        success.classList.add("show");
+
+      } catch (error) {
+
+        alert(
+          "No pudimos enviar el formulario. Por favor, intentá nuevamente."
+        );
+
+        submitButton.disabled = false;
+        submitButton.textContent = "Enviar →";
+
+      }
+
+    });
 
   </script>
 
